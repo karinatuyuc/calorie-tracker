@@ -1,6 +1,13 @@
 
 export default function Form(){
-    <>
-    <h1>Formulario</h1>
-    </>
+    return(
+        <form
+         className="space-y-5 bg-white p-10 rounded-lg"
+         
+         >
+            <p>Formulario</p>
+
+        </form>
+    )
 }
+
