@@ -1,3 +1,4 @@
+import Form from "./componentes/Form"
 
 function App(){
   return(
@@ -14,7 +15,7 @@ function App(){
     {/*Seccion del formulario*/}
     <section className="bg-lime-500 py-20 px-5">
       <div className="max-w-4xl mx-auto">
-        <p>Formulario aqui</p>
+        <Form/>
       </div>
     </section>
 
