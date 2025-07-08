@@ -1,9 +1,7 @@
-import type { category } from "../types"
+//Importando types de category
+import type { Category } from "../types"
 
-export const categories : category[] = [
-    { id: 1, 
-        name: 'Comida'},
-    { id: 2,
-        name: 'Ejercicio'
-    }
+export const categories: Category[] = [
+    { id: 1, name: 'Comida'},
+    { id: 2,name: 'Ejercicio'}
 ]
