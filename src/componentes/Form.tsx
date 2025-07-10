@@ -2,6 +2,8 @@ import { categories } from "../data/categories"
 
 
 export default function Form(){
+
+    //Sin librerias
     return(
         <form 
          className="space-y-5 bg-white shadow p-10 rounded-lg"
@@ -14,7 +16,7 @@ export default function Form(){
                 >
                     {/*Iterando en la base de datos*/}
                     {categories.map(category => (
-                        <option
+                         <option
                           key={category.id}
                           value={category.id}
                           
@@ -28,8 +30,9 @@ export default function Form(){
             {/*Campo para ingresar la actividad */}
             <div className="grid grid-cols-1 gap-3 ">
                 <label htmlFor="activity" className="font-bold">Actividad:</label>
+                {/*el id="activity" sirve para activar el input de cada label*/}
                 <input 
-                 id="activity"
+                 id="activity" 
                  type="text"
                  className="border border-slate-300 p-2 rounded-lg"
                  placeholder="Ej. Comida, Jugo de Naranja, Ensalada, Ejercicio, Pesas, Bicicleta"
@@ -50,7 +53,8 @@ export default function Form(){
             <input
              type="submit"
              className="bg-gray-800 hover:bg-gray-900 w-full p-2 uppercase text-white 
-             cursor-pointer "
+             cursor-pointer"
+             value="Guardar comida o guardar ejercicio"
             />
 
         </form>
