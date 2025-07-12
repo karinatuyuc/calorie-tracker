@@ -6,6 +6,13 @@ export default function Form(){
 
     //Definiendo el state para las categorias, activiades y calorias en un ojeto
 
+    const [activityy, setActivity] = useState({
+        category: 2,
+        name: "",
+        calories: 0
+    })
+
+
 
     //Sin librerias
     return(
@@ -17,6 +24,7 @@ export default function Form(){
                  <select
                   className="border border-slate-300 p-2 rounded-lg w-full bg-white"
                   id="category"
+                  value={activityy.category} //Este value es para conectar el state al form
                  >
                     {categories.map(category => (
                         <option
@@ -31,12 +39,13 @@ export default function Form(){
             </div>
 
             <div className="grid grid-cols-1 gap-3">
-                <label htmlFor="activity" className="font-bold">Actividad</label>
+                <label htmlFor="name" className="font-bold">Actividad</label>
                 <input 
-                 id="activity"
+                 id="name"
                  type="text"
                  className="border border-slate-300 p-2 rounded-lg"
                  placeholder="Ej. Comida, jugo de naranja, ensalada, Ejercicio, pesas, bicileta"
+                 value={activityy.name}
                 />
 
             </div>
@@ -48,6 +57,7 @@ export default function Form(){
                  type="number"
                  className="border border-slate-300 p-2 rounded-lg"
                  placeholder="Carlorias. Ej, 300 o 500"
+                 value={activityy.calories}
                 />
             </div>
 
