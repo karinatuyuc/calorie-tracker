@@ -13,6 +13,12 @@ export default function Form(){
     })
 
 
+    //Funcion para que cambie los values de input/select, o para el onChange   
+    const handleChange = (e) => {
+        console.log(e.target.id)
+    }
+
+
 
     //Sin librerias
     return(
@@ -25,6 +31,7 @@ export default function Form(){
                   className="border border-slate-300 p-2 rounded-lg w-full bg-white"
                   id="category"
                   value={activityy.category} //Este value es para conectar el state al form
+                  onChange={handleChange}
                  >
                     {categories.map(category => (
                         <option
@@ -46,6 +53,7 @@ export default function Form(){
                  className="border border-slate-300 p-2 rounded-lg"
                  placeholder="Ej. Comida, jugo de naranja, ensalada, Ejercicio, pesas, bicileta"
                  value={activityy.name}
+                 onChange={handleChange}
                 />
 
             </div>
@@ -58,6 +66,7 @@ export default function Form(){
                  className="border border-slate-300 p-2 rounded-lg"
                  placeholder="Carlorias. Ej, 300 o 500"
                  value={activityy.calories}
+                 onChange={handleChange}
                 />
             </div>
 
