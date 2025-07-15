@@ -7,7 +7,7 @@ export default function Form(){
     //Definiendo el state para las categorias, activiades y calorias en un ojeto
 
     const [activity, setActivity] = useState({
-        category: 2,
+        category: 1,
         name: "",
         calories: 0
     })
@@ -15,9 +15,10 @@ export default function Form(){
 
     //Funcion para que cambie los values de input/select, o para el onChange   
     const handleChange = (e) => {
-        console.log(e.target.id)
-
-        console.log(e.target.value)
+        setActivity({
+            ...activity,
+           [e.target.id]: e.target.value
+        })
     }
 
 
@@ -46,6 +47,8 @@ export default function Form(){
 
                  </select>
             </div>
+
+
 
             <div className="grid grid-cols-1 gap-3">
                 <label htmlFor="name" className="font-bold">Actividad</label>
