@@ -5,9 +5,3 @@ export const categories: Category[] = [
     { id: 1, name: 'Comida'},
     { id: 2, name: 'Ejercicio'} //It's not recognized the id, but let's see if does now
 ]
-
-export type Activity = {
-    category: number,
-    name: string,
-    calories: number
-}
