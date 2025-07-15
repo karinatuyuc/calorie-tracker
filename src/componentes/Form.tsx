@@ -6,7 +6,7 @@ export default function Form(){
 
     //Definiendo el state para las categorias, activiades y calorias en un ojeto
 
-    const [activityy, setActivity] = useState({
+    const [activity, setActivity] = useState({
         category: 2,
         name: "",
         calories: 0
@@ -16,6 +16,8 @@ export default function Form(){
     //Funcion para que cambie los values de input/select, o para el onChange   
     const handleChange = (e) => {
         console.log(e.target.id)
+
+        console.log(e.target.value)
     }
 
 
@@ -30,7 +32,7 @@ export default function Form(){
                  <select
                   className="border border-slate-300 p-2 rounded-lg w-full bg-white"
                   id="category"
-                  value={activityy.category} //Este value es para conectar el state al form
+                  value={activity.category} //Este value es para conectar el state al form
                   onChange={handleChange}
                  >
                     {categories.map(category => (
@@ -52,7 +54,7 @@ export default function Form(){
                  type="text"
                  className="border border-slate-300 p-2 rounded-lg"
                  placeholder="Ej. Comida, jugo de naranja, ensalada, Ejercicio, pesas, bicileta"
-                 value={activityy.name}
+                 value={activity.name}
                  onChange={handleChange}
                 />
 
@@ -65,7 +67,7 @@ export default function Form(){
                  type="number"
                  className="border border-slate-300 p-2 rounded-lg"
                  placeholder="Carlorias. Ej, 300 o 500"
-                 value={activityy.calories}
+                 value={activity.calories}
                  onChange={handleChange}
                 />
             </div>
