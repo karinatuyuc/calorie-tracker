@@ -1,5 +1,6 @@
 import { useState } from "react"
 import type { ChangeEvent } from "react"
+import { Activity } from "../types"
 import { categories } from "../data/categories"
 
 
