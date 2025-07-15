@@ -1,4 +1,5 @@
 import { useState } from "react"
+import type { ChangeEvent } from "react"
 import { categories } from "../data/categories"
 
 
@@ -14,7 +15,7 @@ export default function Form(){
 
 
     //Funcion para que cambie los values de input/select, o para el onChange   
-    const handleChange = (e) => {
+    const handleChange = (e: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>) => {
         setActivity({
             ...activity,
            [e.target.id]: e.target.value
