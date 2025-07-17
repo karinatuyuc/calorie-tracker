@@ -1,6 +1,6 @@
 import { useState } from "react"
 import type { ChangeEvent } from "react"
-import { Activity } from "../types"
+import type { Activity } from "../types"
 import { categories } from "../data/categories"
 
 
@@ -8,7 +8,7 @@ export default function Form(){
 
     //Definiendo el state para las categorias, activiades y calorias en un ojeto
 
-    const [activity, setActivity] = useState({
+    const [activity, setActivity] = useState<Activity>({
         category: 1,
         name: "",
         calories: 0
@@ -17,9 +17,14 @@ export default function Form(){
 
     //Funcion para que cambie los values de input/select, o para el onChange   
     const handleChange = (e: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>) => {
+    //Comprobando donde estamos escribiendo 
+        const isNumberedField = ['category', 'calories'].includes(e.target.id)
+
+        console.log(isNumberedField)
+
         setActivity({
             ...activity,
-           [e.target.id]: e.target.value
+           [e.target.id]: isNumberedField ? +e.target.value : e.target.value
         })
     }
 
