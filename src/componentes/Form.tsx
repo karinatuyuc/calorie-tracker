@@ -18,17 +18,16 @@ export default function Form(){
     //Funcion para que cambie los values de input/select, o para el onChange   
     const handleChange = (e: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>) => {
     //Comprobando donde estamos escribiendo 
-        const isNumberedField = ['category', 'calories'].includes(e.target.id)
-
-        console.log(isNumberedField)
-
         setActivity({
             ...activity,
-           [e.target.id]: isNumberedField ? +e.target.value : e.target.value
+           [e.target.id]: e.target.value
         })
     }
 
-
+    const isValidActivity = () => {
+        const { name, calories } = activity
+        return name.trim() !== '' && calories > 0
+    }
 
     //Sin librerias
     return(
@@ -86,7 +85,8 @@ export default function Form(){
              type="submit"
              value="Guardar comida o guardad ejercicio"
              className="bg-gray-800 hover:bg-gray-900 w-full p-2 font-bold text-white uppercase
-             cursor-pointer rounded-lg"
+             cursor-pointer rounded-lg disabled:opacity-10"
+             disabled={!isValidActivity()}
             />
 
         </form>
