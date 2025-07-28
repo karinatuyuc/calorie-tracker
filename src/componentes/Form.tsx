@@ -18,9 +18,10 @@ export default function Form(){
     //Funcion para que cambie los values de input/select, o para el onChange   
     const handleChange = (e: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>) => {
     //Comprobando donde estamos escribiendo 
+    const isNumberField = ['category', 'calories'].includes(e.target.id)
         setActivity({
             ...activity,
-           [e.target.id]: e.target.value
+           [e.target.id]: isNumberField ? +e.target.value : e.target.value //Si es un campo numerico, convertir a numero
         })
     }
 
@@ -83,7 +84,7 @@ export default function Form(){
 
             <input
              type="submit"
-             value="Guardar comida o guardad ejercicio"
+             value={activity.category === 1 ? 'guardar comida' : 'guardar ejercicio'}
              className="bg-gray-800 hover:bg-gray-900 w-full p-2 font-bold text-white uppercase
              cursor-pointer rounded-lg disabled:opacity-10"
              disabled={!isValidActivity()}
