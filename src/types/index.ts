@@ -4,7 +4,9 @@ export type Category = {
     name: string
 }
 
-export type Activity = {
+
+//Activiy debe estar relacionado con reducer, pero no se ve 
+export type Activity = { 
     category: number,
     name: string,
     calories: number,
