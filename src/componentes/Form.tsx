@@ -1,6 +1,6 @@
 import { useReducer, useState } from "react"
 import type { ChangeEvent, FormEvent } from "react"
-import type { Activity } from "../types"
+import type { Activity } from "../types" //El type Activity debe ser importado
 import { categories } from "../data/categories"
 
 
