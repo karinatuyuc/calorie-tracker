@@ -6,8 +6,7 @@ export type ActivityAction =
    {type : "save-activity", payload: { newActivity: Activity}} 
 
 
-
-
+//a comment to describe the purpose of this file
 
 //Type para describir el estado inical 
 type ActivityState = {
@@ -26,6 +25,7 @@ export const activityReducer = (
     action: ActivityAction
     ) => {
 
+ //a condition to check the action type
     if(action.type === 'save-activity'){
         //Este codigo maneja la logia para actualizar el estado de las actividades
         console.log('saving in activity reducer')
