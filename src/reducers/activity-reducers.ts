@@ -1,5 +1,5 @@
 import type { Activity } from "../types"
-
+//importando el tipo Activity desde types.ts
 
 //Type que describe que va a pasar en el reducer de la actividad
 export type ActivityAction = 
