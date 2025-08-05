@@ -14,7 +14,7 @@ type ActivityState = {
 
 // Estado inicial del reducer de la actividad
 export const initialState : ActivityState = {
-    activities: []
+    activities: [];
 }
 
 //Este reducer conecta a ActivityAction con ActivityState
@@ -27,7 +27,7 @@ export const activityReducer = (
     if(action.type === 'save-activity'){
         //Este codigo maneja la logia para actualizar el estado de las actividades
         console.log('saving in activity reducer')
-        console.log("Action in save-activity")
+        console.log("Action in save-activity") //COnsole to see if is working or not
     }
 
 }
