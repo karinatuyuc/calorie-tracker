@@ -1,9 +1,8 @@
 import type { Activity } from "../types"
-//importando el tipo Activity desde types.ts
 
 //Type que describe que va a pasar en el reducer de la actividad
 export type ActivityAction = 
-   {type : "save-activity", payload: { newActivity: Activity}} 
+{ type: 'save-activity', payload: { newAcrivity: Activity} }
 
 
 //Type para describir el estado inical 
@@ -24,11 +23,9 @@ export const activityReducer = (
     action: ActivityAction
     ) => {
 
-    if(action.type === 'save-activity'){
-        //Este codigo maneja la logia para actualizar el estado de las actividades
-        console.log('saving in activity reducer')
-        console.log("Action in save-activity") //COnsole to see if is working or not
+        if(action.type === 'save-activity'){
+            //Este codigo manja la logica para actualizar el state   }
+
+            console.log("Desde el type de save-activity")
     }
-
 }
-
