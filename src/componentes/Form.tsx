@@ -1,7 +1,14 @@
-import { useReducer, useState } from "react"
+import { useState } from "react"
 import type { ChangeEvent, FormEvent } from "react"
-import type { Activity } from "../types" //El type Activity debe ser importado
 import { categories } from "../data/categories"
+import type { Activity } from "../types" //El type Activity debe ser importado
+import type { ActivityAction } from "../reducers/activity-reducers"
+
+type FormProps = {
+    dispatch: Dispatch<ActivityAction>
+}
+
+
 
 
 export default function Form(){
