@@ -1,10 +1,16 @@
-import { useReducer, useState } from "react"
-import type { ChangeEvent, FormEvent } from "react"
-import type { Activity } from "../types" //El type Activity debe ser importado
+import { useState } from "react"
+import type { ChangeEvent, FormEvent, Dispatch } from "react"
 import { categories } from "../data/categories"
+import type { Activity } from "../types" //El type Activity debe ser importado
+import type { ActivityAction } from "../reducers/activity-reducers"
 
 
-export default function Form(){
+type FromProps = {
+    dispatch: Dispatch<ActivityAction>
+}
+
+
+export default function Form({dispatch} : FromProps) {
 
     //Definiendo el state para las categorias, activiades y calorias en un ojeto
 
@@ -33,7 +39,9 @@ export default function Form(){
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        console.log("Enviando form")
+
+        dispatch({ type: "save-activity", payload: {newAcrivity: activity} })
+
     }
 
     //Sin librerias
