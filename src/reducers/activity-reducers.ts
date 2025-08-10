@@ -35,5 +35,5 @@ export const activityReducer = (
 
 
     }
-    return state; //Retornamos el state sin cambios si no se cumple la condicion 
+    return state; //Esta linea es fundamental si se cumple o no, siempre retorna el estado actual
 }
