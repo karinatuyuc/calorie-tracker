@@ -1,20 +1,24 @@
 import type { Activity } from "../types"
-import { ActivityAction } from "../actions/activity-actions";
+//Definimos las acciones que puede manejar el reducer
 
-//Type que describe que va a pasar en el reducer de la actividad
+
+
+
 export type ActivityAction = 
+//definimos la accion de guardar una nueva actividad
 { type: 'save-activity', payload: { newAcrivity: Activity} }
 
 
 //Type para describir el estado inical 
 type ActivityState = {
     activities: Activity[];
+    //Array de actividades
 }
 
 
 // Estado inicial del reducer de la actividad
 export const initialState : ActivityState = {
-    activities: []
+    activities: [] //Inicialmente el array de actividades esta vacio
 }
 
 //Este reducer conecta a ActivityAction con ActivityState
@@ -35,6 +39,7 @@ export const activityReducer = (
                 ...state,//Copiamos el estado que teniamos para que no se pierdan los datos
                 activities: [...state.activities, action.payload.newAcrivity ] //Agregamos la nueva actividad al array de actividades
 
+               
 
             }
 
