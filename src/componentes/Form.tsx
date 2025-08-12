@@ -1,5 +1,7 @@
 import { useState } from "react"
 import type { ChangeEvent, FormEvent, Dispatch } from "react"
+import { v4 as uuidv4 } from 'uuid' //Importamos para que no de error el uuid
+
 import { categories } from "../data/categories"
 import type { Activity} from "../types" //El type Activity debe ser importado
 import type { ActivityAction } from "../reducers/activity-reducers"
@@ -9,7 +11,8 @@ type FormProps = {
     dispatch: Dispatch<ActivityAction>
 }
 
-const initialState = {
+const initialState : Activity = {
+    id: uuidv4(), //Generamos un id unico para cada actividad
     category: 1,
     name: "",
     calories: 0
@@ -17,7 +20,6 @@ const initialState = {
 
 
 export default function Form({dispatch} : FormProps) {
-
 
     const [activity, setActivity] = useState<Activity>(initialState) //El state inicial debe ser del tipo Activity
 
@@ -42,8 +44,11 @@ export default function Form({dispatch} : FormProps) {
         event.preventDefault()
 
         dispatch({ type: "save-activity", payload: {newAcrivity: activity} })
+        setActivity({
+            ...initialState, //Reseteamos el formulario a su estado inicial
+            id: uuidv4() //Generamos un nuevo id unico para la proxima actividad
 
-        setActivity(initialState) //Reseteamos el formulario a su estado inicial
+        }) 
 
     }
 
