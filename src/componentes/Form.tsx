@@ -1,24 +1,25 @@
 import { useState } from "react"
 import type { ChangeEvent, FormEvent, Dispatch } from "react"
 import { categories } from "../data/categories"
-import type { Activity } from "../types" //El type Activity debe ser importado
+import type { Activity} from "../types" //El type Activity debe ser importado
 import type { ActivityAction } from "../reducers/activity-reducers"
 
 
-type FromProps = {
+type FormProps = {
     dispatch: Dispatch<ActivityAction>
 }
 
+const initialState = {
+    category: 1,
+    name: "",
+    calories: 0
+}
 
-export default function Form({dispatch} : FromProps) {
 
-    //Definiendo el state para las categorias, activiades y calorias en un ojeto
+export default function Form({dispatch} : FormProps) {
 
-    const [activity, setActivity] = useState<Activity>({
-        category: 1,
-        name: "",
-        calories: 0
-    })
+
+    const [activity, setActivity] = useState<Activity>(initialState) //El state inicial debe ser del tipo Activity
 
 
     //Funcion para que cambie los values de input/select, o para el onChange   
@@ -41,6 +42,8 @@ export default function Form({dispatch} : FromProps) {
         event.preventDefault()
 
         dispatch({ type: "save-activity", payload: {newAcrivity: activity} })
+
+        setActivity(initialState) //Reseteamos el formulario a su estado inicial
 
     }
 
