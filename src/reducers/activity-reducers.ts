@@ -2,18 +2,22 @@ import type { Activity } from "../types"
 
 export type ActivityAction = 
 //definimos la accion de guardar una nueva actividad
-{ type: 'save-activity', payload: { newAcrivity: Activity} }
+{ type: 'save-activity', payload: { newAcrivity: Activity} } |
+{ type: 'set-activeId', payload: { id: Activity['id'] } }
+
 
 
 
 type ActivityState = {
-    activities: Activity[];
+    activities: Activity[],
+    activeId: Activity['id'],
 }
 
 
 
 export const initialState : ActivityState = {
-    activities: []
+    activities: [],
+    activeId: "",
 }
 
 //Este reducer conecta a ActivityAction con ActivityState
@@ -33,6 +37,15 @@ export const activityReducer = (
                     ]
                 }
             }
+
+            if(action.type === 'set-activeId'){
+                return {
+                    ...state,
+                    activeId: action.payload.id //Actualizamos el activeId con el id proporcionado
+                }
+            }
+
+             
 
     return state;
     //Esta linea es fundamental si se cumple o no, siempre se retorna el estado actual
