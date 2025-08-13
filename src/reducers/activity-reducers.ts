@@ -50,3 +50,4 @@ export const activityReducer = (
     return state;
     //Esta linea es fundamental si se cumple o no, siempre se retorna el estado actual
 }
+ 
