@@ -7,10 +7,6 @@ function App(){
 
   const [state, dispatch] = useReducer(activityReducer, initialState);
 
-  console.log(state)
-
-
-
   return(
     <>
     {/*Header y boton */}
@@ -36,7 +32,7 @@ function App(){
       <ActivityList 
 
        activities={state.activities}
-      
+       
       
       />
     </section>
