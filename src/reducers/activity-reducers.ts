@@ -8,7 +8,7 @@ export type ActivityAction =
 
 
 
-type ActivityState = {
+export type ActivityState = {
     activities: Activity[],
     activeId: Activity['id'],
 }
@@ -50,3 +50,4 @@ export const activityReducer = (
     return state;
     //Esta linea es fundamental si se cumple o no, siempre se retorna el estado actual
 }
+ 
