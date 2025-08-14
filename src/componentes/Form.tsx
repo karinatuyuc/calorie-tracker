@@ -4,11 +4,12 @@ import { v4 as uuidv4 } from 'uuid' //Importamos para que no de error el uuid
 
 import { categories } from "../data/categories"
 import type { Activity} from "../types" //El type Activity debe ser importado
-import type { ActivityAction } from "../reducers/activity-reducers"
+import type { ActivityAction, ActivityState } from "../reducers/activity-reducers"
 
 
 type FormProps = {
     dispatch: Dispatch<ActivityAction>
+    state: <ActivityState></ActivityState>
 }
 
 const initialState : Activity = {
