@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import type { ChangeEvent, FormEvent, Dispatch } from "react"
 import { v4 as uuidv4 } from 'uuid' //Importamos para que no de error el uuid
 
@@ -9,7 +9,7 @@ import type { ActivityAction, ActivityState } from "../reducers/activity-reducer
 
 type FormProps = {
     dispatch: Dispatch<ActivityAction>
-    state: <ActivityState></ActivityState>
+    state: ActivityState
 }
 
 const initialState : Activity = {
@@ -20,9 +20,18 @@ const initialState : Activity = {
 }
 
 
-export default function Form({dispatch} : FormProps) {
+export default function Form({dispatch, state} : FormProps) {
 
     const [activity, setActivity] = useState<Activity>(initialState) //El state inicial debe ser del tipo Activity
+
+    useEffect(() => {
+        if(state.activeId){
+            const selectedActivity = state.activities.filter( stateActivity => stateActivity.id === state.activeId)[0]
+            setActivity(selectedActivity)
+
+        }
+
+    }, [state.activeId] )
 
 
     //Funcion para que cambie los values de input/select, o para el onChange   
