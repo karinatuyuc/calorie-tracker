@@ -28,7 +28,6 @@ export default function Form({dispatch, state} : FormProps) {
         if(state.activeId){
             const selectedActivity = state.activities.filter( stateActivity => stateActivity.id === state.activeId)[0]
             setActivity(selectedActivity)
-
         }
 
     }, [state.activeId] )
