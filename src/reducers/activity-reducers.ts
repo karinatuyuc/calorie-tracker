@@ -28,22 +28,19 @@ export const activityReducer = (
     ) => {
             if(action.type === 'save-activity'){
                 //Este codigo maneja la logica para actulizar el estado
-
-                let updadtedActivities : Activity[] = [];
-
+                
+                let updatedActivities : Activity[] = []
                 if(state.activeId){
-                    updadtedActivities = state.activities.map( activity => activity.id === state.activeId ? action.payload.
+                    updatedActivities = state.activities.map( activity => activity.id === state.activeId ? action.payload.
                         newAcrivity : activity)
                 }else{
-                    updadtedActivities = [...state.activities, action.payload.newAcrivity]
+                    updatedActivities =  [...state.activities, action.payload.newAcrivity] //Agregamos la nueva actividad al array de actividades]
                 }
-                
+//Antes del return se puede escribir toda la logica
                 return { //Retornara el estado actualizado
                     ...state,
-                    activities: [
-                        ...state.activities, 
-                        action.payload.newAcrivity //Agregamos la nueva actividad al array de actividades
-                    ]
+                    activities: updatedActivities,
+                    activeId: ""
                 }
             }
 
