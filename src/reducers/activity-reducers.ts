@@ -45,6 +45,7 @@ export const activityReducer = (
             }
 
             if(action.type === 'set-activeId'){
+                //set-activieId para saber el id
                 return {
                     ...state,
                     activeId: action.payload.id //Actualizamos el activeId con el id proporcionado
