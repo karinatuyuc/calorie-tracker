@@ -9,6 +9,7 @@ export type ActivityAction =
 
 
 export type ActivityState = {
+    //17/08
     activities: Activity[],
     activeId: Activity['id'],
 }
