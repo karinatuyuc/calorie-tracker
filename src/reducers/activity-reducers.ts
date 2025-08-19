@@ -8,8 +8,7 @@ export type ActivityAction =
 
 
 
-export type ActivityState = {
-    //17/08
+export type ActivityState = { //18/08/2025
     activities: Activity[],
     activeId: Activity['id'],
 }
@@ -18,7 +17,7 @@ export type ActivityState = {
 
 export const initialState : ActivityState = {
     activities: [],
-    activeId: "",
+    activeId: "", //Para saber el Id del input que vamos a cambiar
 }
 
 //Este reducer conecta a ActivityAction con ActivityState
