@@ -11,6 +11,7 @@ export type ActivityAction =
 export type ActivityState = { //18/08/2025
     activities: Activity[],
     activeId: Activity['id'],
+    //19/0//2025
 }
 
 
