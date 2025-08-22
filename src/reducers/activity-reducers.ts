@@ -57,6 +57,6 @@ export const activityReducer = (
         }
     }
 
-    return state
+    return state //Es obligatorio devolver el state
 }
  
