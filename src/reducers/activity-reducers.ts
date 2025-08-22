@@ -3,7 +3,8 @@ import type { Activity } from "../types"
 export type ActivityAction = 
 //definimos la accion de guardar una nueva actividad
 { type: 'save-activity', payload: { newAcrivity: Activity} } |
-{ type: 'set-activeId', payload: { id: Activity['id'] } }
+{ type: 'set-activeId', payload: { id: Activity['id'] } } |
+{ type: 'delete-activity', payload: { id: Activity['id'] } }
 
 
 
@@ -45,7 +46,8 @@ export const activityReducer = (
 
         return { //Return por accion
             ...state,
-            activities : updatedActivities
+            activities : updatedActivities,
+            activeId: ''
         }
     }
 
@@ -57,6 +59,15 @@ export const activityReducer = (
         }
     }
 
-    return state
+
+    if(action.type === 'delete-activity'){
+        return {
+            ...state,
+            activities: state.activities.filter( activity => activity.id !== action.payload.id )
+
+        }
+    }
+
+    return state //Es obligatorio devolver el state
 }
  
