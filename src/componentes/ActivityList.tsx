@@ -8,6 +8,7 @@ import type { ActivityAction } from "../reducers/activity-reducers"
 type ActivityListProps = {
     activities: Activity[];
     dispatch: Dispatch<ActivityAction>
+    //Dispatch 24/08/2025
 }
 
 
@@ -31,7 +32,7 @@ export default function ActivityList({activities, dispatch}: ActivityListProps) 
           </h2>
 
 
-          {? <p className="text-center">No hay Actividades aun...</p> 
+          { ? <p className="text-center">No hay Actividades aun...</p> 
           :
         
           activities.map( activity => (
