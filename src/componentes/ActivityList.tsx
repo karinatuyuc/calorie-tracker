@@ -21,20 +21,16 @@ export default function ActivityList({activities, dispatch}: ActivityListProps) 
         );
 
         const isEmptyActivities = useMemo( () => activities.length === 0, [activities])
-
-
     return (
         <>
 
-          <h2 
+          <h2
           className="text-4xl font-bold text-slate-600 text-center">
             Comida y Activiades
           </h2>
 
 
-          { ? <p className="text-center">No hay Actividades aun...</p> 
-          :
-        
+          { isEmptyActivities ? <p className="text-center my-5">No hay Actividades aun...</p> :
           activities.map( activity => (
             <div key={activity.id} className="px-5 py-10 bg-white mt-5 flex justify-between items-center rounded-lg shadow">
                 <div className=" space-y-2 relative">
