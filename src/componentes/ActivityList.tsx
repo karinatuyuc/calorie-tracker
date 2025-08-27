@@ -30,7 +30,7 @@ export default function ActivityList({activities, dispatch}: ActivityListProps) 
           </h2>
 
 
-          { isEmptyActivities ? <p className="text-center my-5">No hay Actividades aun...</p> :
+          { isEmptyActivities ? <p className="text-center my-5">No hay actividades aun...</p> :
           activities.map( activity => (
             <div key={activity.id} className="px-5 py-10 bg-white mt-5 flex justify-between items-center rounded-lg shadow">
                 <div className=" space-y-2 relative">
