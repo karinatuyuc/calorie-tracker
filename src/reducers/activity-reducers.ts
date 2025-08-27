@@ -14,10 +14,14 @@ export type ActivityState = {
     activeId: Activity['id'],
 }
 
-
+const localStorageActivities = () : Activity[] => {
+    const activitiesFromLocalStorage = localStorage.getItem('activities')
+    return activitiesFromLocalStorage ? JSON.parse(activitiesFromLocalStorage) : []
+};
 
 export const initialState : ActivityState = {
-    activities: [],
+//En lugar de este arreglo vacio
+    activities: localStorageActivities(), //Esto ya no [],
     activeId: "",
 }
 
