@@ -4,7 +4,8 @@ export type ActivityAction =
 //definimos la accion de guardar una nueva actividad
 { type: 'save-activity', payload: { newAcrivity: Activity} } |
 { type: 'set-activeId', payload: { id: Activity['id'] } } |
-{ type: 'delete-activity', payload: { id: Activity['id'] } }
+{ type: 'delete-activity', payload: { id: Activity['id'] } } |
+{ type: 'restart-app' } //No toma un payload
 
 
 
@@ -55,7 +56,7 @@ export const activityReducer = (
         }
     }
 
-
+    //Para editar una actividad
     if(action.type === 'set-activeId' ){
         return {
             ...state,
@@ -72,6 +73,17 @@ export const activityReducer = (
         }
     }
 
+    if(action.type === 'restart-app'){
+        return {
+            //No va ..state, porque se reinicia todo
+            activities: [],
+            activeId: ''        
+        }
+    }
+
     return state //Es obligatorio devolver el state
 }
  
+
+
+//155. Actualizando las actividades
