@@ -56,7 +56,7 @@ export const activityReducer = (
         }
     }
 
-
+    //Para editar una actividad
     if(action.type === 'set-activeId' ){
         return {
             ...state,
@@ -84,3 +84,6 @@ export const activityReducer = (
     return state //Es obligatorio devolver el state
 }
  
+
+
+//155. Actualizando las actividades
