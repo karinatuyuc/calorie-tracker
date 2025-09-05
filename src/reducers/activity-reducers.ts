@@ -86,4 +86,4 @@ export const activityReducer = (
  
 
 
-//155. Actualizando las actividades
+//159. Almacenando las actividades en el LocalStorage
