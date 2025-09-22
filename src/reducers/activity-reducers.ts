@@ -84,6 +84,5 @@ export const activityReducer = (
     return state //Es obligatorio devolver el state
 }
  
-
-
-//159. Almacenando las actividades en el LocalStorage
+//Comentario para ver si funciona el husky
+//Otro para guardar en git hub 
