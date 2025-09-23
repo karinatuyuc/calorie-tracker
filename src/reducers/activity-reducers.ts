@@ -83,6 +83,3 @@ export const activityReducer = (
 
     return state //Es obligatorio devolver el state
 }
- 
-//Comentario para ver si funciona el husky
-//Otro para guardar en git hub 
