@@ -4,6 +4,7 @@ import ActivityList from "./componentes/ActivityList";
 import { activityReducer, initialState } from "./reducers/activity-reducers";
 
 function App(){
+  //2480920215
 
   const [state, dispatch] = useReducer(activityReducer, initialState);
 
@@ -12,7 +13,6 @@ function App(){
   }, [state.activities]);
 
   const canRestartApp = () => useMemo(() => state.activities.length > 0, [state.activities]);
-
   return(
     <>
     {/*Header y boton */}
