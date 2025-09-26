@@ -1,6 +1,7 @@
 import { useReducer, useEffect, useMemo } from "react";
 import Form from "./componentes/Form";
 import ActivityList from "./componentes/ActivityList";
+import CalorieTracker from "./componentes/CalorieTracker";  
 import { activityReducer, initialState } from "./reducers/activity-reducers";
 
 function App(){
