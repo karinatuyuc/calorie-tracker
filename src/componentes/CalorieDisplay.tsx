@@ -12,6 +12,9 @@ export default function CalorieDisplay({calories, text} : CaloriesDisplayProps) 
             <span  className="font-black text-6xl text-orange">{calories}</span>
             {text}
         </p>
+        <p className="font-black">
+            THis is another letter
+        </p>
         
     )
 }
