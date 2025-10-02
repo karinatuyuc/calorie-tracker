@@ -12,11 +12,6 @@ export default function CalorieDisplay({calories, text} : CaloriesDisplayProps) 
             <span  className="font-black text-6xl text-orange">{calories}</span>
             {text}
         </p>
-
-        <p>
-            Si me da tiempo hago que cambie de color segun las calorias, pero no me da tiempo
-        </p>
-        
-        </>
+        </> //Este es el cierre del fragmente
     )
 }
